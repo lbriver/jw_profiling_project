@@ -1,0 +1,41 @@
+{
+  "name": "webapp-proj",
+  "version": "0.0.5",
+  "description": "/ -> sample data to sever page /uploadFile -> show graph + task and core buttons",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node ./src/init.js",
+    "db": "babel-node ./src/file2db/file2db.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rockum/webapp-project.git"
+  },
+  "author": "Haram Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rockum/webapp-project/issues"
+  },
+  "homepage": "https://github.com/rockum/webapp-project#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.3",
+    "mongoose": "^6.3.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "nodemon": "^2.0.15"
+  },
+  "keywords": [
+    "file",
+    "upload",
+    "mongodb"
+  ]
+}

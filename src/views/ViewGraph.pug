@@ -1,0 +1,175 @@
+doctype html
+head  
+  title 그래프 보기
+  script(src="https://code.jquery.com/jquery-3.7.0.min.js")
+  script(src='http://code.highcharts.com/highcharts.js')
+  script(language='JavaScript'). 
+    
+    function drawChart(){
+      let txt1 = "데이터 선택";
+      if(#{screen}) {
+        txt1 = "#{keyType}의 각 #{attr}별 수치";
+        txt2 = "입력파일: #{pageTitle}, ";
+      }       
+      let title = {
+        text: txt1,
+      };
+      let subtitle = {
+        text: txt2
+      };
+      
+      let chart= {
+        type: "#{chartType}",
+      };
+      let xAxis = {
+        categories: ["#{attr}1", "#{attr}2", "#{attr}3", "#{attr}4", "#{attr}5"],
+        title: {
+          text: "#{attr}",
+        },
+      };
+      let yAxis = {
+        title: {
+        text: "(number)",
+        },
+        plotLines: [
+        {
+          value: 0,
+          width: 1,
+          color: "#555555",
+        },
+        ],
+      };
+      let tooltip = {
+        valueSuffix: "",
+      };
+      let legend = {
+        layout: "vertical",
+        align: "right",
+        verticalAlign: "middle",
+        borderWidth: 0,
+      };
+      let series = [
+        {
+          name: "max",
+          data: [#{maxArr}],
+        },
+        {
+          name: "min",
+          data: [#{minArr}],
+        },
+        {
+          name: "average",
+          data: [#{avgArr}],
+        },
+        {
+          name: "stddev",
+          data: [#{devArr}],
+        },
+      ];
+      let json = {};
+      json.title = title;
+      json.subtitle = subtitle;
+      json.chart = chart;
+      json.xAxis = xAxis;
+      json.yAxis = yAxis;
+      json.tooltip = tooltip;
+      json.legend = legend;
+      json.series = series;
+      $("#graph").highcharts(json);
+    }   
+   $(document).ready(function () {
+      
+     drawChart();
+   
+
+    });
+      
+
+  style 
+   include css/mystyle.css
+  
+body    
+  div.menu          
+    h3 기준 데이터 선택
+    br        
+    each index in ['1', '2','3','4','5']
+      a(href=`/uploadFile/task${index}/${pageTitle}`) Task#{index}
+      a(href=`/uploadFile/core${index}/${pageTitle}`) Core#{index}    
+      br
+    br
+    a(href="/")         파일입력창으로  
+  
+  div.main
+    div.head
+      img(src='/img/banner.png' width='600px' )   
+    #graph(style='width=600px;height=400px;margin: 0 ;padding:0')  
+  
+    form(action=`/uploadFile/${keyType}/${pageTitle}` method='get') 
+      label(for='task') 기준 데이터 선택
+      label(for="task") Task 
+      if viewType==="task" 
+        input(type="radio", name="viewType" value="task" checked)
+      else 
+        input(type="radio", name="viewType" value="task" )      
+      label(for="core") Core
+      if viewType==="core"
+        input(type="radio", name="viewType" value="core" checked)      
+      else
+        input(type="radio", name="viewType" value="core")
+      if num
+        input(id='num',name="number" type="number",  value=num , min=1, max=5)
+      else 
+        input(id='num',name="number" type="number", value='1', min=1, max=5)
+      br
+      label(id='chart_type') 그래프 모양 선택
+      label(for="chart_type") Chart Type:
+      case chartType  
+        when 'line'
+          select(name="chart_type") 
+            option(value="line" selected) line 
+            option(value="column") column 
+            option(value="bar") bar
+            option(value="pie") pie  
+        when 'column'
+          select(name="chart_type") 
+            option(value="line" ) line 
+            option(value="column" selected) column 
+            option(value="bar") bar
+            option(value="pie") pie   
+        when 'bar'
+          select(name="chart_type") 
+            option(value="line" ) line 
+            option(value="column") column 
+            option(value="bar" selected) bar
+            option(value="pie") pie 
+        default
+          select(name="chart_type") 
+            option(value="line" ) line 
+            option(value="column") column 
+            option(value="bar") bar  
+            option(value="pie") pie              
+      br      
+      button.btn Draw graph                
+           
+    div#list
+    if dataArr
+      table
+        if(keyType && attr)
+        caption #{keyType} 의 #{attr} 데이터값     
+        tr
+          th=attr 
+          each index in ['1', '2','3','4','5','6','7','8','9','10']
+            th=index
+        each item in dataArr          
+          tr
+            each val in item
+              td=val
+          
+      
+    //printObjectAsTable(dataArr)
+  
+    
+
+  
+
+  

@@ -1,0 +1,116 @@
+*{
+  padding: 5px 5px;
+  margin: 5px 5px 5px 5px; 
+  border-radius: 30px;    
+  font-weight: 200;
+  text-align: center;
+  position: relative;  
+}
+a {
+  box-shadow: 10px 10px 5px rgba(2, 26, 62, 0.8);
+  border: none;
+  display: inline-block;  
+  border-radius: 10px;    
+  transition: 0.1s;
+  text-decoration: none;
+  font-weight: bold;
+  
+}
+a:hover {  
+  font-weight: bold;
+
+  background-color: aqua;
+  display: inline-block;   
+  transition: 0.1s;
+  border: solid, red;
+  color: red;
+  text-decoration: none;  
+}
+a:visited {
+  text-decoration: none; 
+  color: black;
+  padding: auto;
+}
+h3{
+  font-weight: bold;
+
+}
+#graph{
+  min-width: 600px;
+  width: 600px;
+  padding-top: 0%;
+}
+.main {
+  min-width: 600px;
+  width: 600px;
+  box-shadow: 10px 10px 5px rgba(2, 26, 62, 0.8);
+  transition: 0.1s;
+  border: none;  
+  display: table-cell;   
+  font-weight: bold;
+}
+label{
+  font-weight: bold;
+}
+.menu {  
+  width: 180px;
+  min-width:180px;
+  display: table-cell;  
+  margin: 5px 5px 5px 5px; 
+  box-shadow: 0 10px 5px rgba(1, 14, 33, 0.8);  
+  position: relative; 
+  top: 0px; 
+  font-weight: bold;
+}
+.head{
+  min-width: 600;
+  width: 600;
+  display: table-cell;  
+  padding-bottom:0px;
+  box-shadow: 0 5px 5px rgba(2, 26, 62, 0.8);  
+  transition: 0.15s;
+  border: none;    
+}
+.bottom {
+  display: inline-block;  
+}
+
+.btn{
+  width: 150px;
+  height: 40px;
+  font-size: 30;  
+  font-weight: bold;
+}
+.btn:hover{
+  width: 150px;
+  height: 40px;
+  font-size: 30;
+  font-weight: bold;
+  background-color: aqua;
+}
+caption{
+  font-weight: bold;
+}
+
+#list{
+  display: flex;
+    justify-content: center;
+}
+table{
+  display: inline-block;   
+
+}
+td, th {  
+  padding: 5px 5px;
+  margin: 0; 
+  width:auto;
+  border: 1px solid green;
+  border-radius: 0px;    
+  text-align: center;
+ 
+}
+
+th {
+    background-color: green;
+    color: white;
+}

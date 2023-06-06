@@ -1,0 +1,21 @@
+title 파일 업로드
+head 
+  meta(charset='UTF-8')
+style 
+  include css/mystyle.css
+
+body
+  img.main(src='/img/banner.png')
+  br  
+  h1.main 파일 업로드
+  br
+  form.main(action='/uploadFile', name='input_file', method='post', enctype='multipart/form-data')
+    input(type='file', value='파일 선택하기', accept='txt', name='userfile' required)
+    input(type='submit', value='submit' name='submit1')
+
+  if alert 
+    div 데이터 형식 오류
+  br
+  img.main(src='/img/members.png')  
+    
+    
