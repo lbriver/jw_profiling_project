@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rockum/webapp-project.git"
+    "url": "git+https://github.com/lbriver/jw_profiling_project.git"
   },
   "author": "Haram Lee",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rockum/webapp-project/issues"
+    "url": "https://github.com/lbriver/jw_profiling_project/issues"
   },
-  "homepage": "https://github.com/rockum/webapp-project#readme",
+  "homepage": "https://github.com/lbriver/jw_profiling_project",
   "dependencies": {
     "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
