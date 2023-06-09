@@ -4,7 +4,7 @@
   "description": "/ -> sample data to sever page /uploadFile -> show graph + task and core buttons",
   "main": "src/server.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node ./src/init.js",
+    "init": "nodemon --exec babel-node ./src/init.js",
     "db": "babel-node ./src/file2db/file2db.js"
   },
   "repository": {
